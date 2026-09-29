@@ -1,0 +1,20 @@
+amtf — reproducible selftest report
+python: 3.13.14   platform: win32
+命令：进入仓根，逐件 `python tools/<tool>.py selftest`；本报告由构建脚本在发布副本内实跑生成。
+
+[PASS] tools/guard_gate.py → exit=0 | guard_gate selftest 通过 ✅（I1/I3 端到端；I2 为宿主引擎契约测试，见上）
+[PASS] tools/standard_check.py → exit=0 | 证据:     四维各 0.25：钱包影响明确/证据链完整/方案对比≥3/事后验证通过
+[PASS] tools/standard_structure_check.py → exit=0 | selftest: 2/2 通过（正例全绿 / 缺层被拦）
+[PASS] tools/intent_drift.py → exit=0 | intent_drift selftest 4/4 通过 ✅（对齐/整条漂移/空头支票/未立案拒收）
+[PASS] tools/trajectory_distiller.py → exit=0 | trajectory_distiller selftest 通过 ✅（同型升格/孤例入池/卡带修复动作）
+[PASS] tools/ab_sampler.py → exit=0 | ab_sampler selftest 2/2 通过 ✅（口径一致/进度统计）
+[PASS] tools/zm_certify.py → exit=0 | selftest: 4/4 PASS
+[PASS] tools/forgetting_economics.py → exit=0 | selftest: 4/4 PASS
+[PASS] tools/memory_provenance_chain.py → exit=0 | selftest: 4/4 PASS
+[PASS] tools/memory_portability.py → exit=0 | selftest: 5/5 PASS
+[PASS] tools/poison_admission_gate.py → exit=0 | selftest: 7/7 PASS (L3_ENABLED=False)
+[PASS] tools/invariants.py → exit=0 | invariants selftest 8/8 通过 ✅（三不变量正反例+停止条件+背压）
+[PASS] tools/incident_ledger.py → exit=0 | selftest 3/3 通过 ✅（计数/同型双倍/推定分）
+[PASS] conformance/conformance_suite.py → exit=0 | conformance: 10/10 ALL GREEN -> conformance_report.json
+
+OVERALL: ALL GREEN

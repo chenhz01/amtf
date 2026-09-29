@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zhengming.dev/schemas/amtf-1.0.json",
+  "title": "AMTF Memory Entry v1.0",
+  "type": "object",
+  "required": ["schema_version", "content", "created_at", "valid_from", "valid_until", "provenance", "confidence"],
+  "properties": {
+    "schema_version": { "const": "amtf/1.0" },
+    "content": { "type": "string", "minLength": 1 },
+    "created_at": { "type": ["string", "null"], "format": "date-time-or-date" },
+    "valid_from": { "type": ["string", "null"], "format": "date-time-or-date" },
+    "valid_until": { "type": ["string", "null"], "format": "date-time-or-date" },
+    "provenance": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "required": ["channel", "origin", "trust"],
+          "properties": {
+            "channel": { "type": "string" },
+            "origin": { "type": ["string", "null"] },
+            "trust": { "enum": ["high", "medium", "low"] }
+          }
+        }
+      ]
+    },
+    "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+  },
+  "additionalProperties": true
+}

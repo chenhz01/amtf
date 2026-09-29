@@ -1,0 +1,59 @@
+{
+  "suite": "amtf-conformance/0.1",
+  "spec": "amtf/1.0",
+  "passed": 10,
+  "total": 10,
+  "all_green": true,
+  "cases": [
+    {
+      "name": "case_v1_aggregation",
+      "pass": true,
+      "msg": "缺 5 字段报 5 条 V1（聚合不短路）"
+    },
+    {
+      "name": "case_v2_v3",
+      "pass": true,
+      "msg": "双错同报：['V2', 'V3']"
+    },
+    {
+      "name": "case_v4_v6",
+      "pass": true,
+      "msg": "时序+格式双查：['V4', 'V6']"
+    },
+    {
+      "name": "case_w1_warning",
+      "pass": true,
+      "msg": "永久记忆→W1 警告、不拦"
+    },
+    {
+      "name": "case_reject_visible",
+      "pass": true,
+      "msg": "1 导入 1 拒绝（原因可见）"
+    },
+    {
+      "name": "case_roundtrip",
+      "pass": true,
+      "msg": "往返幂等 + 未知字段透传"
+    },
+    {
+      "name": "case_mem0_adapter",
+      "pass": true,
+      "msg": "3 条全过 + score→confidence 无损"
+    },
+    {
+      "name": "case_zep_adapter",
+      "pass": true,
+      "msg": "失效事实 valid_until=2025-03-31 无损保留"
+    },
+    {
+      "name": "case_jsonl_adapter",
+      "pass": true,
+      "msg": "2 条转换 + 1 坏行可见（不静默）"
+    },
+    {
+      "name": "case_cross_adapter_interop",
+      "pass": true,
+      "msg": "6 条跨源合并迁移全过"
+    }
+  ]
+}

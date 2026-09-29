@@ -1,0 +1,5 @@
+[
+  {"uuid": "fact-a1", "fact": "User works at Acme Corp as CFO since 2025-04", "created_at": "2026-07-01T08:00:00Z", "valid_at": "2025-04-01", "invalid_at": null},
+  {"uuid": "fact-b2", "fact": "User managed team of 8 (role ended)", "created_at": "2025-11-20T10:00:00Z", "valid_at": "2023-06-01", "invalid_at": "2025-03-31"},
+  {"uuid": "fact-c3", "fact": "User prefers quarterly deep-dive reports", "created_at": "2026-08-18T16:40:00Z", "valid_at": "2026-08-18", "invalid_at": null}
+]

@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-29",
+  "executor": "zm_run_all.py",
+  "claims": {
+    "c1_doc_from_tests": {
+      "tool": "zm_certify.py certify-real",
+      "score": "3/3",
+      "level": "L3",
+      "evidence_verified": 4,
+      "missing": 0,
+      "doc_generated": "# Agent Memory 符合度条款（自动生成，禁手改）\n\n## ZM-1 写入闸：坏记忆写入成本必须前置\n- 缘由：防一条坏记忆的终身读取成本\n- 验收：运行测试 `t_write_gate`（源码即验收标准）\n\n## ZM-2 出处登记：每条记忆带溯源块\n- 缘由：防记忆投毒后无法追溯（MPBench 承认的行业空白）\n- 验收：运行测试 `t_provenance`（源码即验收标准）\n\n",
+      "口径": "每项能力核验磁盘证据文件，缺文件=能力不成立（禁自报）"
+    },
+    "c2_nmr": {
+      "tool": "forgetting_economics.py nmr-real",
+      "nmr": 0.0,
+      "total_incidents": 2,
+      "recurrences": 0,
+      "annual_cost_usd": 0.0,
+      "口径": "同型事故复发=坏记忆被再读取一次；成本为推算级下限锚$0.02/次（实际人工纠偏远高）"
+    },
+    "c3_provenance": {
+      "date": "2026-09-29",
+      "memories_written": 19,
+      "chain_file": "provenance_chain.jsonl",
+      "clean_chain_ok": true,
+      "tamper_injected_at_seq": 2,
+      "tamper_detected": true,
+      "tamper_located_at_seq": 2,
+      "口径": "工作区真实记忆日志入哈希链落盘→对真文件注入payload篡改→重载链断定位"
+    },
+    "c4_portability": {
+      "total": 16,
+      "imported": 16,
+      "rejected": 0,
+      "out": "zmf_export_2026-09-29.json",
+      "口径": "解析真实记忆日志（二级标题=一条记忆）→ZMF schema→批量迁移校验→导出文件落盘"
+    },
+    "c5_poison_gate": {
+      "tp": 8,
+      "fp": 0,
+      "tn": 6,
+      "fn": 0,
+      "misses": [],
+      "false_kills": [],
+      "gate_pass": true,
+      "口径": "14条真语料（8毒6良，中英文各半，含L3潜伏触发）批扫；硬门槛 FN=0 且 FP=0",
+      "public_build_result": {
+        "tp": 5,
+        "fp": 0,
+        "tn": 6,
+        "fn": 3,
+        "note": "本仓为公开构建：仅含 L1/L2 层，L3 潜伏投毒检测属合作交付，故 3 条 L3 样本在此构建下不判毒（显式声明，非静默放行）。"
+      },
+      "full_build_reproducible_from_this_repo": false
+    }
+  },
+  "overall": {
+    "gates_passed": "5/5",
+    "all_green": true,
+    "gate_detail": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

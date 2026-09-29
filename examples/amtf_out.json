@@ -1,0 +1,85 @@
+{
+  "format": "amtf/1.0",
+  "exported_at": "2026-09-29T18:07:00+08:00",
+  "exporter": "cross-adapter-demo",
+  "entries": [
+    {
+      "schema_version": "amtf/1.0",
+      "content": "User prefers dark mode across all apps",
+      "created_at": "2026-08-14T09:12:00Z",
+      "valid_from": "2026-08-14T09:12:00Z",
+      "valid_until": null,
+      "provenance": {
+        "channel": "mem0",
+        "origin": "mem-001",
+        "trust": "medium"
+      },
+      "confidence": 0.92
+    },
+    {
+      "schema_version": "amtf/1.0",
+      "content": "User's company fiscal year ends in March",
+      "created_at": "2026-09-02T14:30:00Z",
+      "valid_from": "2026-09-02T14:30:00Z",
+      "valid_until": null,
+      "provenance": {
+        "channel": "mem0",
+        "origin": "mem-002",
+        "trust": "medium"
+      },
+      "confidence": 0.87
+    },
+    {
+      "schema_version": "amtf/1.0",
+      "content": "User dislikes marketing pushes on weekends",
+      "created_at": "2026-09-10T20:05:00Z",
+      "valid_from": "2026-09-10T20:05:00Z",
+      "valid_until": null,
+      "provenance": {
+        "channel": "mem0",
+        "origin": "mem-003",
+        "trust": "medium"
+      },
+      "confidence": 0.78
+    },
+    {
+      "schema_version": "amtf/1.0",
+      "content": "User works at Acme Corp as CFO since 2025-04",
+      "created_at": "2026-07-01T08:00:00Z",
+      "valid_from": "2025-04-01",
+      "valid_until": null,
+      "provenance": {
+        "channel": "zep-graphiti",
+        "origin": "fact-a1",
+        "trust": "medium"
+      },
+      "confidence": null
+    },
+    {
+      "schema_version": "amtf/1.0",
+      "content": "User managed team of 8 (role ended)",
+      "created_at": "2025-11-20T10:00:00Z",
+      "valid_from": "2023-06-01",
+      "valid_until": "2025-03-31",
+      "provenance": {
+        "channel": "zep-graphiti",
+        "origin": "fact-b2",
+        "trust": "medium"
+      },
+      "confidence": null
+    },
+    {
+      "schema_version": "amtf/1.0",
+      "content": "User prefers quarterly deep-dive reports",
+      "created_at": "2026-08-18T16:40:00Z",
+      "valid_from": "2026-08-18",
+      "valid_until": null,
+      "provenance": {
+        "channel": "zep-graphiti",
+        "origin": "fact-c3",
+        "trust": "medium"
+      },
+      "confidence": null
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "title": "记忆飞轮决策提升 A/B 预注册（实验前冻结）",
+  "frozen_at": "2026-09-27",
+  "frozen_by": "maintainer（预注册在采样前冻结，2026-09-27）",
+  "hypothesis": "启用记忆飞轮辅助决策期间，决策质量分较未启用期提升 >= 15%（δ=0.15）",
+  "metric": {
+    "name": "决策质量分",
+    "range": "0-1",
+    "rubric": "四维各 0.25：①钱包影响明确（钱/时间/认知资产/风险四维有具体答）②证据链完整（结论可溯源到实测/实勘）③方案对比 >= 3 ④事后验证通过（以交付为准的 P5 闭环）",
+    "scoring_procedure": "maintainer 盲评：仅展示决策内容与结果，不展示分组标签（双盲）；评分在事件发生后 7 天内完成"
+  },
+  "effect_size": {"delta": 0.15, "sigma": 0.5, "sigma_source": "ab_design.py 历史基线假设，收满 n 后以实测 σ 复核，若实测 σ > 0.5 须扩样并留痕"},
+  "sample_size_per_group": 175,
+  "alpha": 0.05,
+  "power": 0.80,
+  "test": "两独立样本 t 检验（双侧）",
+  "assignment": {
+    "design": "准实验：按周交替 A/B/B/A 抵消时间漂移（对照周→实验周→实验周→对照周循环）",
+    "deviation_from_random": "一人公司 + HITL 现实约束，无法对单次决策真随机分组；此偏离为诚实声明，非隐蔽妥协",
+    "blinding": "评分端盲（评分者不知当周属于哪组）"
+  },
+  "stop_condition": "任一组收满 n=175 条有效样本，或连续 30 天无显著差异",
+  "failure_handling": "不显著 → 假设连同全部数据存档进失败库；禁止加样本硬凑显著（防 p-hacking）",
+  "data_file": "ab_samples.jsonl",
+  "sample_schema": {"date": "YYYY-MM-DD", "week_parity": "A|B", "desc": "决策事件一句话", "quality": "0-1 四维合计", "four_dims": "数组[钱包,证据,对比,验证]各0-0.25", "scored_by": "owner", "blind": true},
+  "fingerprint_sha16_note": "本文件任何改动须在提交信息中声明（预注册冻结原则）"
+}
